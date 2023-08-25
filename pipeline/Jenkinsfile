@@ -81,7 +81,7 @@ pipeline {
             }
         }
         
-        stage('Backup & Copy'){
+        stage('Docker Build & Push'){
             parallel{
                 stage('backup-copy-challenge-service'){
                     when{
@@ -141,7 +141,7 @@ pipeline {
             }
         }
 
-        stage('Deploy'){
+        stage('Docker Run'){
             parallel{
                 stage('deploy-challenge-service'){
                     when{
